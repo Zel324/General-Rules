@@ -1,7 +1,7 @@
 /*=============== SWIPER JS ===============*/
 let swiperCards = new Swiper(".card__content", {
   loop: true,
-  spaceBetween: 32,
+  spaceBetween: 0,
   grabCursor: true,
 
   pagination: {

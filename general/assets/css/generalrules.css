@@ -1,0 +1,311 @@
+/*=============== GOOGLE FONTS ===============*/
+@import url("https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@400;500;600&display=swap");
+
+/*=============== VARIABLES CSS ===============*/
+:root {
+  /*========== Colors ==========*/
+  /*Color mode HSL(hue, saturation, lightness)*/
+  --first-color: hsl(38, 92%, 58%);
+  --first-color-light: hsl(38, 100%, 78%);
+  --first-color-alt: hsl(32, 75%, 50%);
+  --second-color: darkblue;
+  --dark-color: hsl(212, 40%, 12%);
+  --white-color: darkblue;
+  --body-color: #FAFAFA;
+  --container-color: #fafafa;
+
+  /*========== Font and typography ==========*/
+  /*.5rem = 8px | 1rem = 16px ...*/
+  --body-font: "Poppins", sans-serif;
+  --h2-font-size: 1.25rem;
+  --normal-font-size: 1rem;
+}
+
+/*=============== BASE ===============*/
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  background-color: var(--body-color);
+  color: var(--white-color);
+  
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.background {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 1;
+}
+
+.logoheading {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 0px;
+  width: 40%;
+  z-index: 2;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  text-decoration: none;
+}
+
+/*=============== CARD ===============*/
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+}
+
+.card__container {
+  padding-block: 5rem;
+}
+
+.card{
+  background-color: white;
+  width: 330px;
+  height: 430px;
+  margin: 5px;
+  border-radius: 15px;
+  transition: transform 0.3s, background-color 0.3s;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 10px;
+  position: relative;
+  }
+
+.card__content {
+  margin-inline: 1.75rem;
+  border-radius: 1.25rem;
+  overflow: hidden;
+}
+
+.card__article {
+  border-radius: 1.25rem;
+  overflow: hidden;
+}
+
+.card__data {
+  background-color: white;
+  border-radius: 1rem;
+  text-align: center;
+  position: relative;
+  z-index: 10;
+  width: 240px;
+  height: 270px;
+}
+
+.card__name {
+  top: 20px;
+  left: 20px;
+  font-size: var(--h2-font-size);
+  color: var(--second-color);
+  margin-bottom: .75rem;
+}
+/* Body Text */
+.card__description {
+  font-weight: 400;
+  margin-bottom: 1.75rem;
+  font-family: 'Poppins';
+  font-size: 20px;
+  text-align: center;
+  color: darkblue;
+}
+
+/* Card Hover */
+.card__data:hover .card__name {
+  color: white;
+}
+
+.card__data:hover .card__description {
+  color: white;
+}
+
+.card__data:hover {
+  background-color: #6c6cee;
+  cursor: pointer;
+  transform: scale(1.010);
+}
+
+.card__container::after {
+  content: "";
+  position: absolute;
+  bottom: -50px; 
+  left: 50%; 
+  transform: translateX(-50%); 
+  width: 0; 
+  height: 3px; 
+  background-color: darkblue; 
+  transition: width 0.3s; 
+  z-index: 2; 
+  pointer-events: none; 
+  border-radius: 30px;
+  pointer-events: none;
+}
+
+.card__container:hover::after {
+  width: 70%; 
+}
+
+.hover-underline-animation {
+  display: inline-block;
+  position: relative;
+  color: #0087ca;
+}
+
+/* Swiper class */
+.swiper-button-prev:after,
+.swiper-button-next:after {
+  content: "";
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  width: initial;
+  height: initial;
+  font-size: 3rem;
+  color: var(--second-color);
+  display: none;
+}
+
+.swiper-button-prev {
+  left: 0;
+}
+
+.swiper-button-next {
+  right: 0;
+}
+
+.swiper-pagination-bullet {
+  background-color: hsl(212, 32%, 40%);
+  opacity: 1;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: var(--second-color);
+}
+
+/*=============== BREAKPOINTS ===============*/
+/* For small devices */
+@media screen and (max-width: 320px) {
+  .card__data {
+    padding: 1rem;
+  }
+
+  .swiper-button-next, .swiper-button-prev {
+    display: block;
+  }
+}
+
+@media screen and (min-width: 320px) {
+  .logoheading {
+    margin-top: 25px;
+    width: 60%;
+  }
+  .container {
+    margin-top: 5%;
+  }
+  .swiper-button-next,
+  .swiper-button-prev {
+    display: block;
+    padding-left: 60px;
+    padding-right: 55px;
+  }
+  /* Cards */
+  .card__data {
+    padding: 2.3rem;
+    max-width: 100%;
+    max-height: 100%;
+    width: 240px;
+    height: 270px;
+  }
+  .card__description {
+    font-size: 14px;
+  }
+}
+
+
+/* For medium devices */
+@media screen and (min-width: 600px) {
+  .logoheading {
+    margin-top: 25px;
+    width: 50%;
+  }
+  .swiper-button-next,
+  .swiper-button-prev {
+    display: block;
+    padding-inline-end: 0px;
+  }
+  .card__content {
+    margin-inline: 1rem;
+  }
+  .card__data {
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+    padding-left: 25px;
+    max-width: 100%;
+    width: 215px;
+    height: 270px;
+    margin-left: 90px;
+  }
+
+  .card__description {
+    font-size: 14px;
+  }
+}
+
+/* For large devices */
+@media screen and (min-width: 1120px) {
+  .logoheading {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    width: 60vh;
+  }
+  .card {
+    width: 350px;
+  }
+  .card__article {
+    padding-left: 10px;
+  }
+  .container {
+    width: auto;
+    margin-top: 0%;
+  }
+  
+  .card__container {
+    max-width: 1280px;
+  }
+  .card__data {
+    max-width: 100%;
+    width: 215px;
+    height: 270px;
+    margin-left: 90px;
+  }
+
+  .swiper-button-prev {
+    left: -1rem;
+  }
+  .swiper-button-next {
+    right: -0rem;
+    margin-left: 0px;
+  }
+}
