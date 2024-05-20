@@ -58,7 +58,7 @@ a {
   text-decoration: none;
 }
 
-/*=============== CARD ===============*/
+/*=============== The whole Card Slider ===============*/
 .container {
   display: flex;
   justify-content: center;
@@ -91,6 +91,7 @@ a {
   height: 380px;
 }
 
+/*====== Contents inside the Cards ======*/
 .card__name {
   font-size: var(--h2-font-size);
   color: var(--second-color);
@@ -120,7 +121,7 @@ a {
   transform: scale(1.03);
 }
 
-/* Swiper class */
+/*====== Swiper class ======*/
 .swiper-button-prev:after,
 .swiper-button-next:after {
   content: "";
